@@ -11,7 +11,10 @@
     "commitlintrc",
     "lefthook",
     "metaverse",
-    "mypy"
+    "mypy",
+    "reconstructor",
+    "unproject",
+    "unprojected"
   ],
   "ignoreWords": [],
   "import": ["./cspell/python.jsonc"]

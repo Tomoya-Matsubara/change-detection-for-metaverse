@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app/
+          ignore:
+            - ./data/
+        - action: rebuild
+          path: ./pyproject.toml
+    tty: true
+    entrypoint: bash

@@ -40,6 +40,7 @@ successfully suppressed.*
 - [3. Setup](#3-setup)
 - [4. Running the Change Detection Algorithm](#4-running-the-change-detection-algorithm)
   - [4.1. Object Detection](#41-object-detection)
+  - [4.2. Change Detection](#42-change-detection)
 - [5. Setup for Development](#5-setup-for-development)
   - [5.1. `pnpm`](#51-pnpm)
   - [5.2. `Lefthook`](#52-lefthook)
@@ -102,6 +103,7 @@ extension is recommended.
 The change detection pipeline is composed of the following steps:
 
 1. [Object Detection](#41-object-detection)
+2. [Change Detection](#42-change-detection)
 
 
 ### 4.1. Object Detection
@@ -123,6 +125,32 @@ step as follows:
 ```python
 detector = YoloObjectDetector(model_path) # This varies depending on the model
 detector.detect_all(dataset_path, results_path)
+```
+
+
+### 4.2. Change Detection
+
+After the object detection has been applied to all images, the change detection
+step can be run.
+
+The change detection algorithm is implemented in the
+[`ChangeDetector`](./src/mcd/change_detection/detector.py) class, which detects
+changes between each pair of images. The class depends on a data loader that
+loads the object detection results from the object detection step.
+
+Since the format of the object detection results may vary depending on the
+model, you need to implement a data loader class that inherits from the
+[`ObjectDetectionDataLoaderBase`](./src/mcd/loader/base.py). For more details on
+how to implement a data loader, refer to the
+[`README.md`](./src/mcd/change_detection/README.md) file in the
+`change_detection` directory.
+
+To run the change detection step, you can use the following code snippet:
+
+```python
+detector = ChangeDetector()
+loader = MyDataLoader() # This varies depending on your dataset
+detector.run_all(datasets_path, loader, before_name)
 ```
 
 

@@ -1,0 +1,28 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: cspell
+      glob: "*.{ipynb,md,py}"
+      run: pnpm cspell --gitignore --cache {staged_files}
+    - name: markdownlint
+      glob: "*.md"
+      run: pnpm markdownlint-cli2 --fix {staged_files}
+
+commit-msg:
+  parallel: true
+  jobs:
+    - name: cspell
+      run: pnpm cspell --no-summary {1}
+    - name: commitlint
+      run: pnpm commitlint --edit {1}
+
+prepare-commit-msg:
+  jobs:
+    - name: commitizen
+      run: pnpm cz --hook
+      interactive: true
+      skip:
+        - rebase
+      env:
+        # Setting `LEFTHOOK` to 0 disables `Lefthook` temporarily when running git commands
+        LEFTHOOK: "0"

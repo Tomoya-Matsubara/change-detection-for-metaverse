@@ -1,0 +1,42 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "[yaml]": {
+      "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[toml]": {
+      "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "python.analysis.autoImportCompletions": true,
+    "yaml.schemas": {
+      "https://raw.githubusercontent.com/evilmartians/lefthook/master/schema.json": "file:///Users/hvrl_mt/Documents/Research/change-detection-for-metaverse/lefthook.yml"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "redhat.vscode-yaml",
+      "esbenp.prettier-vscode",
+      "davidanson.vscode-markdownlint",
+      "tamasfe.even-better-toml",
+      "ms-python.python",
+      "ms-python.mypy-type-checker",
+      "charliermarsh.ruff"
+    ]
+  }
+}

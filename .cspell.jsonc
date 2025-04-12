@@ -1,0 +1,17 @@
+{
+  "version": "0.2",
+  "ignorePaths": [".cspell.jsonc", "node_modules", "package.json"],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "cjs",
+    "cli",
+    "commitizen",
+    "commitlint",
+    "commitlintrc",
+    "lefthook",
+    "metaverse"
+  ],
+  "ignoreWords": [],
+  "import": []
+}

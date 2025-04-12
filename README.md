@@ -150,7 +150,7 @@ To run the change detection step, you can use the following code snippet:
 ```python
 detector = ChangeDetector()
 loader = MyDataLoader() # This varies depending on your dataset
-detector.detect_all(datasets_path, loader, before_name)
+detector.run_all(datasets_path, loader, before_name)
 ```
 
 

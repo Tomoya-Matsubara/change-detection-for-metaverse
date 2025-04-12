@@ -5,6 +5,14 @@ This repository contains the official implementation of the paper
 ["Change Detection for Constantly Maintaining Up-to-date Metaverse Maps"](
     https://ieeexplore.ieee.org/document/10536152).
 
+
+<div align="center">
+    <!-- markdownlint-disable MD013 -->
+    <video controls loop autoplay muted src="https://github.com/user-attachments/assets/a9d0f188-b197-4ca5-a297-56215e1efc93"></video>
+    <!-- markdownlint-enable MD013 -->
+</div>
+
+
 <!-- omit in toc -->
 ## Abstract
 

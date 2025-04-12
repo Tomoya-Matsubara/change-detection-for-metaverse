@@ -1,0 +1,23 @@
+{
+  "author": "Tomoya Matsubara",
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "description": "A template to kick-start a Python project",
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "commitizen": "^4.3.1",
+    "cspell": "^8.17.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "git-cz": "^4.9.0",
+    "markdownlint-cli2": "^0.17.2"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "name": "change-detection-for-metaverse",
+  "scripts": {},
+  "version": "1.0.0"
+}

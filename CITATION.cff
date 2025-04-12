@@ -1,0 +1,35 @@
+authors:
+  - family-names: Matsubara
+    given-names: Tomoya
+    orcid: https://orcid.org/0009-0005-4055-7326
+cff-version: 1.2.0
+message: "If you use this software, please cite both the article from preferred-citation and the software itself."
+preferred-citation:
+  authors:
+    - family-names: Matsubara
+      given-names: Tomoya
+      orcid: https://orcid.org/0009-0005-4055-7326
+    - family-names: Sugimoto
+      given-names: Maki
+    - family-names: Saito
+      given-names: Hideo
+  collection-title: 2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)
+  doi: 10.1109/VRW62533.2024.00107
+  end: 564
+  keywords:
+    - Three-dimensional displays
+    - Metaverse
+    - Conferences
+    - Clustering algorithms
+    - Detectors
+    - Virtual reality
+    - User interfaces
+    - Computing methodologies-Computer graphics-Graphics systems and interfaces-Mixed / augmented reality
+    - Computing methodologies-Artificial intelligence-Computer vision-Computer vision problems-Object detection
+    - Theory of computation-Theory and algorithms for application domains-Machine learning theory-Unsupervised learning and clustering
+  start: 559
+  title: Change Detection for Constantly Maintaining Up-to-date Metaverse Maps
+  type: conference-paper
+  year: 2024
+repository-code: https://github.com/Tomoya-Matsubara/change-detection-for-metaverse
+title: Change Detection for Constantly Maintaining Up-to-date Metaverse Maps

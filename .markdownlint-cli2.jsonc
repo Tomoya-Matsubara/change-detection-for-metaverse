@@ -1,0 +1,18 @@
+{
+  "config": {
+    "no-multiple-blanks": {
+      "maximum": 2
+    },
+    "line-length": {
+      "code_block_line_length": 88,
+      "strict": true,
+      "tables": false
+    },
+    "blanks-around-headings": {
+      "lines_above": 2
+    },
+    "no-duplicate-heading": false,
+    "no-inline-html": false
+  },
+  "ignores": ["node_modules"]
+}

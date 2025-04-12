@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: pretty-format-json
+        args: [--autofix]
+      - id: detect-private-key
+      - id: check-added-large-files
+        args: ["--maxkb=2000"]
+      - id: no-commit-to-branch
+        args: [--branch, main]

@@ -41,9 +41,11 @@ successfully suppressed.*
 - [4. Running the Change Detection Algorithm](#4-running-the-change-detection-algorithm)
   - [4.1. Object Detection](#41-object-detection)
   - [4.2. Change Detection](#42-change-detection)
-- [5. Setup for Development](#5-setup-for-development)
-  - [5.1. `pnpm`](#51-pnpm)
-  - [5.2. `Lefthook`](#52-lefthook)
+- [5. Utilities](#5-utilities)
+  - [5.1. Reconstructing the Scene](#51-reconstructing-the-scene)
+- [6. Setup for Development](#6-setup-for-development)
+  - [6.1. `pnpm`](#61-pnpm)
+  - [6.2. `Lefthook`](#62-lefthook)
 <!-- markdownlint-enable line-length -->
 
 ## 1. Prerequisites
@@ -154,10 +156,26 @@ detector.run_all(datasets_path, loader, before_name)
 ```
 
 
-## 5. Setup for Development
+## 5. Utilities
 
 
-### 5.1. `pnpm`
+### 5.1. Reconstructing the Scene
+
+[`src/mcd/reconstruct.py`](./src/mcd/reconstruct.py) provides a utility to
+reconstruct the scene from the change detection results. The script uses RGB-D
+images and camera parameters to reconstruct the scene in 3D space by using the
+provided image loader.
+
+Since the data format and configurations (e.g., camera parameters) may vary
+depending on the dataset, you might want to check if your implementation of the
+loader is correct. The script helps you verify the correctness of the loader by
+passing your loader to the script and visualizing the reconstructed scene.
+
+
+## 6. Setup for Development
+
+
+### 6.1. `pnpm`
 
 While this project is a Python project, this repository uses JavaScript packages
 for code formatting and linting. As a package manager, `pnpm` is used.
@@ -173,7 +191,7 @@ pnpm install --frozen-lockfile
 ```
 
 
-### 5.2. `Lefthook`
+### 6.2. `Lefthook`
 
 This repository uses `Lefthook` as a Git hooks manager. You can install
 `Lefthook` by following

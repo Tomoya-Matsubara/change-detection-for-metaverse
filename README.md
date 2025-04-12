@@ -8,6 +8,7 @@ This repository contains the official implementation of the paper
 
 <div align="center">
     <!-- markdownlint-disable MD013 -->
+    <!-- cSpell: ignore autoplay -->
     <video controls loop autoplay muted src="https://github.com/user-attachments/assets/a9d0f188-b197-4ca5-a297-56215e1efc93"></video>
     <!-- markdownlint-enable MD013 -->
 </div>
@@ -33,15 +34,33 @@ successfully suppressed.*
 <!-- omit in toc -->
 ## Table of Contents
 
-- [1. Setup for Development](#1-setup-for-development)
-  - [1.1. `pnpm`](#11-pnpm)
-  - [1.2. `Lefthook`](#12-lefthook)
+- [1. Setup](#1-setup)
+- [2. Setup for Development](#2-setup-for-development)
+  - [2.1. `pnpm`](#21-pnpm)
+  - [2.2. `Lefthook`](#22-lefthook)
 
 
-## 1. Setup for Development
+## 1. Setup
+
+The project is fully containerized. To set up the project, run the following
+command:
+
+```bash
+docker compose watch
+```
+
+<!-- markdownlint-disable line-length -->
+This command will start the container with dependencies installed. To work in
+the container, the Visual Studio Code
+[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+extension is recommended.
+<!-- markdownlint-enable line-length -->
 
 
-### 1.1. `pnpm`
+## 2. Setup for Development
+
+
+### 2.1. `pnpm`
 
 While this project is a Python project, this repository uses JavaScript packages
 for code formatting and linting. As a package manager, `pnpm` is used.
@@ -57,7 +76,7 @@ pnpm install --frozen-lockfile
 ```
 
 
-### 1.2. `Lefthook`
+### 2.2. `Lefthook`
 
 This repository uses `Lefthook` as a Git hooks manager. You can install
 `Lefthook` by following

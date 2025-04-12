@@ -7,6 +7,17 @@ pre-commit:
     - name: markdownlint
       glob: "*.md"
       run: pnpm markdownlint-cli2 --fix {staged_files}
+    - name: mypy
+      glob: "*.py"
+      run: uv run mypy {staged_files}
+    - name: ruff lint
+      glob: "*.py"
+      run: uv run ruff check --fix {staged_files}
+    - name: ruff format
+      glob: "*.py"
+      run: uv run ruff format {staged_files}
+    - name: pre-commit
+      run: pre-commit run
 
 commit-msg:
   parallel: true

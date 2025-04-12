@@ -10,7 +10,8 @@
     "commitlint",
     "commitlintrc",
     "lefthook",
-    "metaverse"
+    "metaverse",
+    "mypy"
   ],
   "ignoreWords": [],
   "import": []

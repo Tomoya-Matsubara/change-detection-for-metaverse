@@ -178,3 +178,6 @@ node_modules/
 
 # CSpell
 .cspellcache
+
+# Data Files
+change_detection_result.json

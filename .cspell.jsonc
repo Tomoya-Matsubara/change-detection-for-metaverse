@@ -14,5 +14,5 @@
     "mypy"
   ],
   "ignoreWords": [],
-  "import": []
+  "import": ["./cspell/python.jsonc"]
 }

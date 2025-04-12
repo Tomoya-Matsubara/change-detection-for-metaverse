@@ -1,0 +1,28 @@
+{
+  "version": "0.2",
+  "ignorePaths": [],
+  "dictionaryDefinitions": [],
+  "dictionaries": [],
+  "words": [
+    "dbscan",
+    "dtypes",
+    "figsize",
+    "fourcc",
+    "hconcat",
+    "imread",
+    "levelname",
+    "linalg",
+    "ndarray",
+    "num_channels",
+    "numpy",
+    "plt",
+    "pydantic",
+    "unhashable",
+    "xlabel",
+    "xyxy", // Bounding box format
+    "ylabel",
+    "zlabel"
+  ],
+  "ignoreWords": [],
+  "import": []
+}

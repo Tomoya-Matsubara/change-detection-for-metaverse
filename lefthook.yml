@@ -16,6 +16,9 @@ pre-commit:
     - name: ruff format
       glob: "*.py"
       run: uv run ruff format {staged_files}
+    - name: pytest
+      glob: "*.py"
+      run: uv run pytest
     - name: pre-commit
       run: pre-commit run
 

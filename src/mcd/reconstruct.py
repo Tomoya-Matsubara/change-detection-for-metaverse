@@ -1,4 +1,4 @@
-"""Package for reconstructing scenes from images.
+"""Module for reconstructing scenes from images.
 
 Disclaimer
 ----------

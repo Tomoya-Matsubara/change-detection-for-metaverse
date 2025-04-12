@@ -83,7 +83,7 @@ class YoloObjectDetector(base.ObjectDetectorBase):
         ):
             new_file_name = f"{image_id}{file_path.suffix}"
             _LOGGER.debug("Renaming %s to %s.", file_path, new_file_name)
-            file_path.rename(file_path.parent / f"{image_id}{file_path.suffix}")
+            file_path.rename(file_path.parent / new_file_name)
 
         if (boxes := result.boxes) is None or len(boxes.cls) == 0:
             _LOGGER.debug("No objects detected in image %s.", image_id)

@@ -388,7 +388,7 @@ class Refiner:
                     change=change_points.root[i].change,
                     point=change_points.root[i].point,
                     pixel=change_points.root[i].pixel,
-                    cluster_id=cluster_id,
+                    cluster_id=int(cluster_id),
                 )
                 for i, cluster_id in enumerate(clusters)
             ]

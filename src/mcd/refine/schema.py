@@ -115,7 +115,7 @@ class LabelInfo3d(pydantic.BaseModel, frozen=True, strict=True):
         raise ValueError(message)
 
 
-class SinglePairResult3d(pydantic.BaseModel, frozen=True, strict=True):
+class SinglePairResult3d(pydantic.BaseModel, frozen=True):
     """Result schema for change detection in 3D space of a single pair of images.
 
     Unlike the 2D version, origins of items in the sets is not important because the

@@ -181,3 +181,8 @@ node_modules/
 
 # Data Files
 change_detection_result.json
+datasets/
+results/
+
+# Hydra output
+outputs/

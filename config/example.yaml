@@ -1,0 +1,9 @@
+defaults:
+  - hydra/run: custom
+  - dataset: example
+  - object_detection: example
+  - change_detection: example
+  - refinement: example
+  - override hydra/hydra_logging: colorlog
+  - override hydra/job_logging: custom
+  - _self_

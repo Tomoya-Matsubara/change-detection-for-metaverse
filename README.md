@@ -42,11 +42,13 @@ successfully suppressed.*
   - [4.1. Object Detection](#41-object-detection)
   - [4.2. Change Detection](#42-change-detection)
   - [4.3. Refinement](#43-refinement)
-- [5. Utilities](#5-utilities)
-  - [5.1. Reconstructing the Scene](#51-reconstructing-the-scene)
-- [6. Setup for Development](#6-setup-for-development)
-  - [6.1. `pnpm`](#61-pnpm)
-  - [6.2. `Lefthook`](#62-lefthook)
+- [5. Running the Whole Pipeline at Once](#5-running-the-whole-pipeline-at-once)
+- [6. Utilities](#6-utilities)
+  - [6.1. Visualizing the Change Detection Results](#61-visualizing-the-change-detection-results)
+  - [6.2. Reconstructing the Scene](#62-reconstructing-the-scene)
+- [7. Setup for Development](#7-setup-for-development)
+  - [7.1. `pnpm`](#71-pnpm)
+  - [7.2. `Lefthook`](#72-lefthook)
 <!-- markdownlint-enable line-length -->
 
 ## 1. Prerequisites
@@ -182,10 +184,41 @@ refiner.refine(results_3d, results_path)
 ```
 
 
-## 5. Utilities
+## 5. Running the Whole Pipeline at Once
+
+The whole pipeline can be run at once with [`src/mcd/run.py`](./src/mcd/run.py).
+
+The script uses [Hydra](https://hydra.cc/) to load various configurations from
+[`config/example.yaml`](./config/example.yaml). The schema and explanation of
+each field are defined in [`config/schema.yaml`](./config/schema.yaml).
+
+Once you have set up the configuration file, you can run the whole pipeline
+with the following command:
+
+```bash
+uv run src/mcd/run.py
+```
+
+Alternatively, you can run the script with the following command:
+
+```bash
+uv run mcd
+```
 
 
-### 5.1. Reconstructing the Scene
+## 6. Utilities
+
+Aside from the main pipeline, this repository provides utilities for
+visualization and implementation verification.
+
+
+### 6.1. Visualizing the Change Detection Results
+
+[`src/mcd/video.py`](./src/mcd/video.py) provides a utility to visualize the
+change detection results in a video format.
+
+
+### 6.2. Reconstructing the Scene
 
 [`src/mcd/reconstruct.py`](./src/mcd/reconstruct.py) provides a utility to
 reconstruct the scene from the change detection results. The script uses RGB-D
@@ -198,10 +231,10 @@ loader is correct. The script helps you verify the correctness of the loader by
 passing your loader to the script and visualizing the reconstructed scene.
 
 
-## 6. Setup for Development
+## 7. Setup for Development
 
 
-### 6.1. `pnpm`
+### 7.1. `pnpm`
 
 While this project is a Python project, this repository uses JavaScript packages
 for code formatting and linting. As a package manager, `pnpm` is used.
@@ -217,7 +250,7 @@ pnpm install --frozen-lockfile
 ```
 
 
-### 6.2. `Lefthook`
+### 7.2. `Lefthook`
 
 This repository uses `Lefthook` as a Git hooks manager. You can install
 `Lefthook` by following

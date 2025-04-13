@@ -41,6 +41,7 @@ successfully suppressed.*
 - [4. Running the Change Detection Algorithm](#4-running-the-change-detection-algorithm)
   - [4.1. Object Detection](#41-object-detection)
   - [4.2. Change Detection](#42-change-detection)
+  - [4.3. Refinement](#43-refinement)
 - [5. Utilities](#5-utilities)
   - [5.1. Reconstructing the Scene](#51-reconstructing-the-scene)
 - [6. Setup for Development](#6-setup-for-development)
@@ -106,6 +107,7 @@ The change detection pipeline is composed of the following steps:
 
 1. [Object Detection](#41-object-detection)
 2. [Change Detection](#42-change-detection)
+3. [Refinement](#43-refinement)
 
 
 ### 4.1. Object Detection
@@ -153,6 +155,30 @@ To run the change detection step, you can use the following code snippet:
 detector = ChangeDetector()
 loader = MyDataLoader() # This varies depending on your dataset
 detector.run_all(datasets_path, loader, before_name)
+```
+
+
+### 4.3. Refinement
+
+The final step is refinement, which refines the change detection results by
+clustering the detected changes.
+
+The refinement algorithm is implemented in the
+[`Refiner`](./src/mcd/refine/refiner.py) class. The class requires a data loader
+to load the data from the dataset. This data loader should inherit from the
+[`RefinementDataLoaderBase`](./src/mcd/loader/base.py) class. For more
+details on how to implement a data loader, refer to the
+[`README.md`](./src/mcd/refine/README.md) file in the `refine` directory.
+
+To run the refinement step, you can use the following code snippet:
+
+```python
+refiner = Refiner()
+loader = MyDataLoader() # This varies depending on your dataset
+results_3d = refiner.convert_result_2d_to_3d(
+    datasets_path, results, loader, before_name
+)
+refiner.refine(results_3d, results_path)
 ```
 
 

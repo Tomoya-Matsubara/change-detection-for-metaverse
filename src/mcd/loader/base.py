@@ -267,3 +267,82 @@ class ObjectDetectionDataLoaderBase(abc.ABC, _DataLoaderBase):
         list[label.LabelInfo]
             Labels read from the file.
         """
+
+
+class RefinementDataLoaderBase(abc.ABC, _DataLoaderBase):
+    """Data loader interface for refining change detection results.
+
+    Parameters
+    ----------
+    correction_matrix : dtypes.NpArray4x4Type[np.float32] | None, default None
+        Matrix to correct the position in camera space.
+    """
+
+    def __init__(
+        self, correction_matrix: dtypes.NpArray4x4Type[np.float32] | None = None
+    ) -> None:
+        self.correction_matrix: typing.Final[
+            dtypes.NpArray4x4Type[np.float32] | None
+        ] = correction_matrix
+        """Matrix to correct the position in camera space."""
+
+    @abc.abstractmethod
+    def get_depth_map_path_pair(
+        self, datasets_path: pathlib.Path, image_id: str, before_name: str = "before"
+    ) -> tuple[pathlib.Path, pathlib.Path]:
+        """Get the pair of paths to the depth maps of an image.
+
+        Parameters
+        ----------
+        datasets_path : pathlib.Path
+            Path to the datasets directory containing "before" and "after" directories.
+        image_id : str
+            Identifier of the image.
+        before_name : str, default "before"
+            Name of the dataset that represents the scene before the change.
+
+        Returns
+        -------
+        tuple[pathlib.Path, pathlib.Path]
+            Before and after depth map paths.
+        """
+
+    @abc.abstractmethod
+    def get_depth_map(
+        self, depth_path: pathlib.Path
+    ) -> dtypes.GrayscaleImageType[np.float32]:
+        """Get the depth map from a file.
+
+        Parameters
+        ----------
+        depth_path : pathlib.Path
+            Path to the depth map file.
+
+        Returns
+        -------
+        dtypes.GrayscaleImageType[np.float32]
+            Depth map.
+        """
+
+    @abc.abstractmethod
+    def load_camera_parameters(
+        self, datasets_path: pathlib.Path, image_id: str, before_name: str = "before"
+    ) -> dtypes.Camera:
+        """Load the camera parameters of an image.
+
+        Parameters
+        ----------
+        datasets_path : pathlib.Path
+            Path to the datasets directory containing "before" and "after" directories.
+            Whether to look for "before" or "after" is not important and depends on the
+            implementation.
+        image_id : str
+            Identifier of the image.
+        before_name : str, default "before"
+            Name of the dataset that represents the scene before the change.
+
+        Returns
+        -------
+        dtypes.Camera
+            Camera parameters.
+        """
